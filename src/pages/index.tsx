@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { gql, useQuery } from "@apollo/client";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { GetMemoQuery } from "type/_generated_/graphql";
+import type { GetMemoQuery } from "type/_generated_/graphql";
 
 const Home: NextPage = () => {
   const { firstName } = useUser();
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         Hello, {firstName}!
         <div>
           <ul>
-            {data?.memo.map((memo) => (
+            {data?.memos.map((memo) => (
               <li key={memo.id}>{memo.title}</li>
             ))}
           </ul>
@@ -33,7 +33,7 @@ export default Home;
 
 const getMemo = gql`
   query getMemo {
-    memo {
+    memos {
       id
       title
       content

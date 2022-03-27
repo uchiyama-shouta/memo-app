@@ -47,162 +47,123 @@ export type String_Comparison_Exp = {
   _similar?: InputMaybe<Scalars['String']>;
 };
 
-/** columns and relationships of "memo" */
-export type Memo = {
-  __typename?: 'memo';
+/** columns and relationships of "memos" */
+export type Memos = {
+  __typename?: 'memos';
   content: Scalars['String'];
   created_at: Scalars['timestamptz'];
   id: Scalars['uuid'];
   title: Scalars['String'];
   updated_at: Scalars['timestamptz'];
-  /** An object relationship */
-  user: Users;
-  userId: Scalars['uuid'];
+  userId: Scalars['String'];
 };
 
-/** aggregated selection of "memo" */
-export type Memo_Aggregate = {
-  __typename?: 'memo_aggregate';
-  aggregate?: Maybe<Memo_Aggregate_Fields>;
-  nodes: Array<Memo>;
+/** aggregated selection of "memos" */
+export type Memos_Aggregate = {
+  __typename?: 'memos_aggregate';
+  aggregate?: Maybe<Memos_Aggregate_Fields>;
+  nodes: Array<Memos>;
 };
 
-/** aggregate fields of "memo" */
-export type Memo_Aggregate_Fields = {
-  __typename?: 'memo_aggregate_fields';
+/** aggregate fields of "memos" */
+export type Memos_Aggregate_Fields = {
+  __typename?: 'memos_aggregate_fields';
   count: Scalars['Int'];
-  max?: Maybe<Memo_Max_Fields>;
-  min?: Maybe<Memo_Min_Fields>;
+  max?: Maybe<Memos_Max_Fields>;
+  min?: Maybe<Memos_Min_Fields>;
 };
 
 
-/** aggregate fields of "memo" */
-export type Memo_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Memo_Select_Column>>;
+/** aggregate fields of "memos" */
+export type Memos_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Memos_Select_Column>>;
   distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
-/** order by aggregate values of table "memo" */
-export type Memo_Aggregate_Order_By = {
-  count?: InputMaybe<Order_By>;
-  max?: InputMaybe<Memo_Max_Order_By>;
-  min?: InputMaybe<Memo_Min_Order_By>;
-};
-
-/** input type for inserting array relation for remote table "memo" */
-export type Memo_Arr_Rel_Insert_Input = {
-  data: Array<Memo_Insert_Input>;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Memo_On_Conflict>;
-};
-
-/** Boolean expression to filter rows from the table "memo". All fields are combined with a logical 'AND'. */
-export type Memo_Bool_Exp = {
-  _and?: InputMaybe<Array<Memo_Bool_Exp>>;
-  _not?: InputMaybe<Memo_Bool_Exp>;
-  _or?: InputMaybe<Array<Memo_Bool_Exp>>;
+/** Boolean expression to filter rows from the table "memos". All fields are combined with a logical 'AND'. */
+export type Memos_Bool_Exp = {
+  _and?: InputMaybe<Array<Memos_Bool_Exp>>;
+  _not?: InputMaybe<Memos_Bool_Exp>;
+  _or?: InputMaybe<Array<Memos_Bool_Exp>>;
   content?: InputMaybe<String_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   title?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  user?: InputMaybe<Users_Bool_Exp>;
-  userId?: InputMaybe<Uuid_Comparison_Exp>;
+  userId?: InputMaybe<String_Comparison_Exp>;
 };
 
-/** unique or primary key constraints on table "memo" */
-export enum Memo_Constraint {
+/** unique or primary key constraints on table "memos" */
+export enum Memos_Constraint {
   /** unique or primary key constraint */
-  MemoPkey = 'memo_pkey'
+  MemosPkey = 'memos_pkey'
 }
 
-/** input type for inserting data into table "memo" */
-export type Memo_Insert_Input = {
+/** input type for inserting data into table "memos" */
+export type Memos_Insert_Input = {
   content?: InputMaybe<Scalars['String']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
   id?: InputMaybe<Scalars['uuid']>;
   title?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
-  user?: InputMaybe<Users_Obj_Rel_Insert_Input>;
-  userId?: InputMaybe<Scalars['uuid']>;
+  userId?: InputMaybe<Scalars['String']>;
 };
 
 /** aggregate max on columns */
-export type Memo_Max_Fields = {
-  __typename?: 'memo_max_fields';
+export type Memos_Max_Fields = {
+  __typename?: 'memos_max_fields';
   content?: Maybe<Scalars['String']>;
   created_at?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   title?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
-  userId?: Maybe<Scalars['uuid']>;
-};
-
-/** order by max() on columns of table "memo" */
-export type Memo_Max_Order_By = {
-  content?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  title?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-  userId?: InputMaybe<Order_By>;
+  userId?: Maybe<Scalars['String']>;
 };
 
 /** aggregate min on columns */
-export type Memo_Min_Fields = {
-  __typename?: 'memo_min_fields';
+export type Memos_Min_Fields = {
+  __typename?: 'memos_min_fields';
   content?: Maybe<Scalars['String']>;
   created_at?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   title?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
-  userId?: Maybe<Scalars['uuid']>;
+  userId?: Maybe<Scalars['String']>;
 };
 
-/** order by min() on columns of table "memo" */
-export type Memo_Min_Order_By = {
-  content?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  title?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-  userId?: InputMaybe<Order_By>;
-};
-
-/** response of any mutation on the table "memo" */
-export type Memo_Mutation_Response = {
-  __typename?: 'memo_mutation_response';
+/** response of any mutation on the table "memos" */
+export type Memos_Mutation_Response = {
+  __typename?: 'memos_mutation_response';
   /** number of rows affected by the mutation */
   affected_rows: Scalars['Int'];
   /** data from the rows affected by the mutation */
-  returning: Array<Memo>;
+  returning: Array<Memos>;
 };
 
-/** on_conflict condition type for table "memo" */
-export type Memo_On_Conflict = {
-  constraint: Memo_Constraint;
-  update_columns?: Array<Memo_Update_Column>;
-  where?: InputMaybe<Memo_Bool_Exp>;
+/** on_conflict condition type for table "memos" */
+export type Memos_On_Conflict = {
+  constraint: Memos_Constraint;
+  update_columns?: Array<Memos_Update_Column>;
+  where?: InputMaybe<Memos_Bool_Exp>;
 };
 
-/** Ordering options when selecting data from "memo". */
-export type Memo_Order_By = {
+/** Ordering options when selecting data from "memos". */
+export type Memos_Order_By = {
   content?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   title?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
-  user?: InputMaybe<Users_Order_By>;
   userId?: InputMaybe<Order_By>;
 };
 
-/** primary key columns input for table: memo */
-export type Memo_Pk_Columns_Input = {
+/** primary key columns input for table: memos */
+export type Memos_Pk_Columns_Input = {
   id: Scalars['uuid'];
 };
 
-/** select columns of table "memo" */
-export enum Memo_Select_Column {
+/** select columns of table "memos" */
+export enum Memos_Select_Column {
   /** column name */
   Content = 'content',
   /** column name */
@@ -217,18 +178,18 @@ export enum Memo_Select_Column {
   UserId = 'userId'
 }
 
-/** input type for updating data in table "memo" */
-export type Memo_Set_Input = {
+/** input type for updating data in table "memos" */
+export type Memos_Set_Input = {
   content?: InputMaybe<Scalars['String']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
   id?: InputMaybe<Scalars['uuid']>;
   title?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
-  userId?: InputMaybe<Scalars['uuid']>;
+  userId?: InputMaybe<Scalars['String']>;
 };
 
-/** update columns of table "memo" */
-export enum Memo_Update_Column {
+/** update columns of table "memos" */
+export enum Memos_Update_Column {
   /** column name */
   Content = 'content',
   /** column name */
@@ -246,110 +207,58 @@ export enum Memo_Update_Column {
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
-  /** delete data from the table: "memo" */
-  delete_memo?: Maybe<Memo_Mutation_Response>;
-  /** delete single row from the table: "memo" */
-  delete_memo_by_pk?: Maybe<Memo>;
-  /** delete data from the table: "users" */
-  delete_users?: Maybe<Users_Mutation_Response>;
-  /** delete single row from the table: "users" */
-  delete_users_by_pk?: Maybe<Users>;
-  /** insert data into the table: "memo" */
-  insert_memo?: Maybe<Memo_Mutation_Response>;
-  /** insert a single row into the table: "memo" */
-  insert_memo_one?: Maybe<Memo>;
-  /** insert data into the table: "users" */
-  insert_users?: Maybe<Users_Mutation_Response>;
-  /** insert a single row into the table: "users" */
-  insert_users_one?: Maybe<Users>;
-  /** update data of the table: "memo" */
-  update_memo?: Maybe<Memo_Mutation_Response>;
-  /** update single row of the table: "memo" */
-  update_memo_by_pk?: Maybe<Memo>;
-  /** update data of the table: "users" */
-  update_users?: Maybe<Users_Mutation_Response>;
-  /** update single row of the table: "users" */
-  update_users_by_pk?: Maybe<Users>;
+  /** delete data from the table: "memos" */
+  delete_memos?: Maybe<Memos_Mutation_Response>;
+  /** delete single row from the table: "memos" */
+  delete_memos_by_pk?: Maybe<Memos>;
+  /** insert data into the table: "memos" */
+  insert_memos?: Maybe<Memos_Mutation_Response>;
+  /** insert a single row into the table: "memos" */
+  insert_memos_one?: Maybe<Memos>;
+  /** update data of the table: "memos" */
+  update_memos?: Maybe<Memos_Mutation_Response>;
+  /** update single row of the table: "memos" */
+  update_memos_by_pk?: Maybe<Memos>;
 };
 
 
 /** mutation root */
-export type Mutation_RootDelete_MemoArgs = {
-  where: Memo_Bool_Exp;
+export type Mutation_RootDelete_MemosArgs = {
+  where: Memos_Bool_Exp;
 };
 
 
 /** mutation root */
-export type Mutation_RootDelete_Memo_By_PkArgs = {
+export type Mutation_RootDelete_Memos_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
 
 /** mutation root */
-export type Mutation_RootDelete_UsersArgs = {
-  where: Users_Bool_Exp;
+export type Mutation_RootInsert_MemosArgs = {
+  objects: Array<Memos_Insert_Input>;
+  on_conflict?: InputMaybe<Memos_On_Conflict>;
 };
 
 
 /** mutation root */
-export type Mutation_RootDelete_Users_By_PkArgs = {
-  id: Scalars['uuid'];
+export type Mutation_RootInsert_Memos_OneArgs = {
+  object: Memos_Insert_Input;
+  on_conflict?: InputMaybe<Memos_On_Conflict>;
 };
 
 
 /** mutation root */
-export type Mutation_RootInsert_MemoArgs = {
-  objects: Array<Memo_Insert_Input>;
-  on_conflict?: InputMaybe<Memo_On_Conflict>;
+export type Mutation_RootUpdate_MemosArgs = {
+  _set?: InputMaybe<Memos_Set_Input>;
+  where: Memos_Bool_Exp;
 };
 
 
 /** mutation root */
-export type Mutation_RootInsert_Memo_OneArgs = {
-  object: Memo_Insert_Input;
-  on_conflict?: InputMaybe<Memo_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_UsersArgs = {
-  objects: Array<Users_Insert_Input>;
-  on_conflict?: InputMaybe<Users_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Users_OneArgs = {
-  object: Users_Insert_Input;
-  on_conflict?: InputMaybe<Users_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_MemoArgs = {
-  _set?: InputMaybe<Memo_Set_Input>;
-  where: Memo_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Memo_By_PkArgs = {
-  _set?: InputMaybe<Memo_Set_Input>;
-  pk_columns: Memo_Pk_Columns_Input;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_UsersArgs = {
-  _set?: InputMaybe<Users_Set_Input>;
-  where: Users_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Users_By_PkArgs = {
-  _set?: InputMaybe<Users_Set_Input>;
-  pk_columns: Users_Pk_Columns_Input;
+export type Mutation_RootUpdate_Memos_By_PkArgs = {
+  _set?: InputMaybe<Memos_Set_Input>;
+  pk_columns: Memos_Pk_Columns_Input;
 };
 
 /** column ordering options */
@@ -370,125 +279,67 @@ export enum Order_By {
 
 export type Query_Root = {
   __typename?: 'query_root';
-  /** fetch data from the table: "memo" */
-  memo: Array<Memo>;
-  /** fetch aggregated fields from the table: "memo" */
-  memo_aggregate: Memo_Aggregate;
-  /** fetch data from the table: "memo" using primary key columns */
-  memo_by_pk?: Maybe<Memo>;
-  /** fetch data from the table: "users" */
-  users: Array<Users>;
-  /** fetch aggregated fields from the table: "users" */
-  users_aggregate: Users_Aggregate;
-  /** fetch data from the table: "users" using primary key columns */
-  users_by_pk?: Maybe<Users>;
+  /** fetch data from the table: "memos" */
+  memos: Array<Memos>;
+  /** fetch aggregated fields from the table: "memos" */
+  memos_aggregate: Memos_Aggregate;
+  /** fetch data from the table: "memos" using primary key columns */
+  memos_by_pk?: Maybe<Memos>;
 };
 
 
-export type Query_RootMemoArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
+export type Query_RootMemosArgs = {
+  distinct_on?: InputMaybe<Array<Memos_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
+  order_by?: InputMaybe<Array<Memos_Order_By>>;
+  where?: InputMaybe<Memos_Bool_Exp>;
 };
 
 
-export type Query_RootMemo_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
+export type Query_RootMemos_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Memos_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
+  order_by?: InputMaybe<Array<Memos_Order_By>>;
+  where?: InputMaybe<Memos_Bool_Exp>;
 };
 
 
-export type Query_RootMemo_By_PkArgs = {
-  id: Scalars['uuid'];
-};
-
-
-export type Query_RootUsersArgs = {
-  distinct_on?: InputMaybe<Array<Users_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
-};
-
-
-export type Query_RootUsers_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Users_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
-};
-
-
-export type Query_RootUsers_By_PkArgs = {
+export type Query_RootMemos_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
-  /** fetch data from the table: "memo" */
-  memo: Array<Memo>;
-  /** fetch aggregated fields from the table: "memo" */
-  memo_aggregate: Memo_Aggregate;
-  /** fetch data from the table: "memo" using primary key columns */
-  memo_by_pk?: Maybe<Memo>;
-  /** fetch data from the table: "users" */
-  users: Array<Users>;
-  /** fetch aggregated fields from the table: "users" */
-  users_aggregate: Users_Aggregate;
-  /** fetch data from the table: "users" using primary key columns */
-  users_by_pk?: Maybe<Users>;
+  /** fetch data from the table: "memos" */
+  memos: Array<Memos>;
+  /** fetch aggregated fields from the table: "memos" */
+  memos_aggregate: Memos_Aggregate;
+  /** fetch data from the table: "memos" using primary key columns */
+  memos_by_pk?: Maybe<Memos>;
 };
 
 
-export type Subscription_RootMemoArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
+export type Subscription_RootMemosArgs = {
+  distinct_on?: InputMaybe<Array<Memos_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
+  order_by?: InputMaybe<Array<Memos_Order_By>>;
+  where?: InputMaybe<Memos_Bool_Exp>;
 };
 
 
-export type Subscription_RootMemo_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
+export type Subscription_RootMemos_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Memos_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
+  order_by?: InputMaybe<Array<Memos_Order_By>>;
+  where?: InputMaybe<Memos_Bool_Exp>;
 };
 
 
-export type Subscription_RootMemo_By_PkArgs = {
-  id: Scalars['uuid'];
-};
-
-
-export type Subscription_RootUsersArgs = {
-  distinct_on?: InputMaybe<Array<Users_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
-};
-
-
-export type Subscription_RootUsers_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Users_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Users_Order_By>>;
-  where?: InputMaybe<Users_Bool_Exp>;
-};
-
-
-export type Subscription_RootUsers_By_PkArgs = {
+export type Subscription_RootMemos_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
@@ -504,164 +355,6 @@ export type Timestamptz_Comparison_Exp = {
   _neq?: InputMaybe<Scalars['timestamptz']>;
   _nin?: InputMaybe<Array<Scalars['timestamptz']>>;
 };
-
-/** columns and relationships of "users" */
-export type Users = {
-  __typename?: 'users';
-  createdAt: Scalars['timestamptz'];
-  id: Scalars['uuid'];
-  /** An array relationship */
-  memos: Array<Memo>;
-  /** An aggregate relationship */
-  memos_aggregate: Memo_Aggregate;
-  updatedAt: Scalars['timestamptz'];
-};
-
-
-/** columns and relationships of "users" */
-export type UsersMemosArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
-};
-
-
-/** columns and relationships of "users" */
-export type UsersMemos_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Memo_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Memo_Order_By>>;
-  where?: InputMaybe<Memo_Bool_Exp>;
-};
-
-/** aggregated selection of "users" */
-export type Users_Aggregate = {
-  __typename?: 'users_aggregate';
-  aggregate?: Maybe<Users_Aggregate_Fields>;
-  nodes: Array<Users>;
-};
-
-/** aggregate fields of "users" */
-export type Users_Aggregate_Fields = {
-  __typename?: 'users_aggregate_fields';
-  count: Scalars['Int'];
-  max?: Maybe<Users_Max_Fields>;
-  min?: Maybe<Users_Min_Fields>;
-};
-
-
-/** aggregate fields of "users" */
-export type Users_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Users_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-};
-
-/** Boolean expression to filter rows from the table "users". All fields are combined with a logical 'AND'. */
-export type Users_Bool_Exp = {
-  _and?: InputMaybe<Array<Users_Bool_Exp>>;
-  _not?: InputMaybe<Users_Bool_Exp>;
-  _or?: InputMaybe<Array<Users_Bool_Exp>>;
-  createdAt?: InputMaybe<Timestamptz_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
-  memos?: InputMaybe<Memo_Bool_Exp>;
-  updatedAt?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "users" */
-export enum Users_Constraint {
-  /** unique or primary key constraint */
-  UsersPkey = 'users_pkey'
-}
-
-/** input type for inserting data into table "users" */
-export type Users_Insert_Input = {
-  createdAt?: InputMaybe<Scalars['timestamptz']>;
-  id?: InputMaybe<Scalars['uuid']>;
-  memos?: InputMaybe<Memo_Arr_Rel_Insert_Input>;
-  updatedAt?: InputMaybe<Scalars['timestamptz']>;
-};
-
-/** aggregate max on columns */
-export type Users_Max_Fields = {
-  __typename?: 'users_max_fields';
-  createdAt?: Maybe<Scalars['timestamptz']>;
-  id?: Maybe<Scalars['uuid']>;
-  updatedAt?: Maybe<Scalars['timestamptz']>;
-};
-
-/** aggregate min on columns */
-export type Users_Min_Fields = {
-  __typename?: 'users_min_fields';
-  createdAt?: Maybe<Scalars['timestamptz']>;
-  id?: Maybe<Scalars['uuid']>;
-  updatedAt?: Maybe<Scalars['timestamptz']>;
-};
-
-/** response of any mutation on the table "users" */
-export type Users_Mutation_Response = {
-  __typename?: 'users_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Users>;
-};
-
-/** input type for inserting object relation for remote table "users" */
-export type Users_Obj_Rel_Insert_Input = {
-  data: Users_Insert_Input;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Users_On_Conflict>;
-};
-
-/** on_conflict condition type for table "users" */
-export type Users_On_Conflict = {
-  constraint: Users_Constraint;
-  update_columns?: Array<Users_Update_Column>;
-  where?: InputMaybe<Users_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "users". */
-export type Users_Order_By = {
-  createdAt?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  memos_aggregate?: InputMaybe<Memo_Aggregate_Order_By>;
-  updatedAt?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: users */
-export type Users_Pk_Columns_Input = {
-  id: Scalars['uuid'];
-};
-
-/** select columns of table "users" */
-export enum Users_Select_Column {
-  /** column name */
-  CreatedAt = 'createdAt',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  UpdatedAt = 'updatedAt'
-}
-
-/** input type for updating data in table "users" */
-export type Users_Set_Input = {
-  createdAt?: InputMaybe<Scalars['timestamptz']>;
-  id?: InputMaybe<Scalars['uuid']>;
-  updatedAt?: InputMaybe<Scalars['timestamptz']>;
-};
-
-/** update columns of table "users" */
-export enum Users_Update_Column {
-  /** column name */
-  CreatedAt = 'createdAt',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  UpdatedAt = 'updatedAt'
-}
 
 /** Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'. */
 export type Uuid_Comparison_Exp = {
@@ -679,12 +372,4 @@ export type Uuid_Comparison_Exp = {
 export type GetMemoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetMemoQuery = { __typename?: 'query_root', memo: Array<{ __typename?: 'memo', id: string, title: string, content: string }> };
-
-export type CreateMemoMutationVariables = Exact<{
-  title: Scalars['String'];
-  content: Scalars['String'];
-}>;
-
-
-export type CreateMemoMutation = { __typename?: 'mutation_root', insert_memo_one?: { __typename?: 'memo', title: string, content: string, user: { __typename?: 'users', id: string } } | null };
+export type GetMemoQuery = { __typename?: 'query_root', memos: Array<{ __typename?: 'memos', id: string, title: string, content: string }> };
