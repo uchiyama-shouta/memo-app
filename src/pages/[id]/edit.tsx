@@ -19,7 +19,7 @@ type Props = {
 };
 
 const RichTextEditor: ComponentType<Props> = dynamic(
-  () => import("@mantine/rte").then((mod) => mod.RichTextEditor),
+  () => import("@mantine/rte").then((mod) => mod.RichTextEditor) as any,
   { ssr: false },
 );
 
