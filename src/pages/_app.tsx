@@ -9,13 +9,16 @@ import {
 } from "@clerk/nextjs";
 
 import { ApolloProviderWrapper } from "lib/ApolloProviderWrapper";
+import { Layout } from "components/layout/Layout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ClerkProvider>
       <SignedIn>
         <ApolloProviderWrapper>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ApolloProviderWrapper>
       </SignedIn>
       <SignedOut>

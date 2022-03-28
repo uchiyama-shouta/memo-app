@@ -51,10 +51,10 @@ export type String_Comparison_Exp = {
 export type Memos = {
   __typename?: 'memos';
   content: Scalars['String'];
-  created_at: Scalars['timestamptz'];
+  createdAt: Scalars['timestamptz'];
   id: Scalars['uuid'];
   title: Scalars['String'];
-  updated_at: Scalars['timestamptz'];
+  updatedAt: Scalars['timestamptz'];
   userId: Scalars['String'];
 };
 
@@ -86,10 +86,10 @@ export type Memos_Bool_Exp = {
   _not?: InputMaybe<Memos_Bool_Exp>;
   _or?: InputMaybe<Array<Memos_Bool_Exp>>;
   content?: InputMaybe<String_Comparison_Exp>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  createdAt?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   title?: InputMaybe<String_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updatedAt?: InputMaybe<Timestamptz_Comparison_Exp>;
   userId?: InputMaybe<String_Comparison_Exp>;
 };
 
@@ -102,10 +102,10 @@ export enum Memos_Constraint {
 /** input type for inserting data into table "memos" */
 export type Memos_Insert_Input = {
   content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['timestamptz']>;
+  createdAt?: InputMaybe<Scalars['timestamptz']>;
   id?: InputMaybe<Scalars['uuid']>;
   title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']>;
+  updatedAt?: InputMaybe<Scalars['timestamptz']>;
   userId?: InputMaybe<Scalars['String']>;
 };
 
@@ -113,10 +113,10 @@ export type Memos_Insert_Input = {
 export type Memos_Max_Fields = {
   __typename?: 'memos_max_fields';
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   title?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   userId?: Maybe<Scalars['String']>;
 };
 
@@ -124,10 +124,10 @@ export type Memos_Max_Fields = {
 export type Memos_Min_Fields = {
   __typename?: 'memos_min_fields';
   content?: Maybe<Scalars['String']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
+  createdAt?: Maybe<Scalars['timestamptz']>;
   id?: Maybe<Scalars['uuid']>;
   title?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
   userId?: Maybe<Scalars['String']>;
 };
 
@@ -150,10 +150,10 @@ export type Memos_On_Conflict = {
 /** Ordering options when selecting data from "memos". */
 export type Memos_Order_By = {
   content?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
+  createdAt?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   title?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
+  updatedAt?: InputMaybe<Order_By>;
   userId?: InputMaybe<Order_By>;
 };
 
@@ -167,13 +167,13 @@ export enum Memos_Select_Column {
   /** column name */
   Content = 'content',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
   Title = 'title',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
   UserId = 'userId'
 }
@@ -181,10 +181,10 @@ export enum Memos_Select_Column {
 /** input type for updating data in table "memos" */
 export type Memos_Set_Input = {
   content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['timestamptz']>;
+  createdAt?: InputMaybe<Scalars['timestamptz']>;
   id?: InputMaybe<Scalars['uuid']>;
   title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']>;
+  updatedAt?: InputMaybe<Scalars['timestamptz']>;
   userId?: InputMaybe<Scalars['String']>;
 };
 
@@ -193,13 +193,13 @@ export enum Memos_Update_Column {
   /** column name */
   Content = 'content',
   /** column name */
-  CreatedAt = 'created_at',
+  CreatedAt = 'createdAt',
   /** column name */
   Id = 'id',
   /** column name */
   Title = 'title',
   /** column name */
-  UpdatedAt = 'updated_at',
+  UpdatedAt = 'updatedAt',
   /** column name */
   UserId = 'userId'
 }
@@ -372,4 +372,11 @@ export type Uuid_Comparison_Exp = {
 export type GetMemoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetMemoQuery = { __typename?: 'query_root', memos: Array<{ __typename?: 'memos', id: string, title: string, content: string }> };
+export type GetMemoQuery = { __typename?: 'query_root', memos: Array<{ __typename?: 'memos', id: string, title: string, updatedAt: string }> };
+
+export type GetMemoDetailQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type GetMemoDetailQuery = { __typename?: 'query_root', memos_by_pk?: { __typename?: 'memos', title: string, content: string, updatedAt: string } | null };
