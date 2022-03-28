@@ -20,7 +20,7 @@ const MemoPage = () => {
         {data?.memos_by_pk?.content}
         <SampleMarkdown />
       </div>
-      <div className="absolute right-10 bottom-3">
+      <div className="fixed right-10 bottom-3">
         <EditButton href={`/${router.query.id}/edit`} />
       </div>
     </div>
