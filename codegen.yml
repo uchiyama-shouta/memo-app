@@ -3,7 +3,7 @@ schema:
       headers:
         x-hasura-admin-secret: ${NEXT_PUBLIC_X_HASURA_ADMIN_SECRET}
 documents:
-  - ./src/{components,pages}/**/*.{ts,tsx}
+  - ./src/**/*.{ts,tsx}
 overwrite: true
 generates:
   ./src/type/_generated_/graphql.ts:

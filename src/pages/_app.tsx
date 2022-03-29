@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
+import { MantineProvider } from "@mantine/core";
 
 import {
   ClerkProvider,
@@ -16,9 +17,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ClerkProvider>
       <SignedIn>
         <ApolloProviderWrapper>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <MantineProvider withGlobalStyles withNormalizeCSS>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </MantineProvider>
         </ApolloProviderWrapper>
       </SignedIn>
       <SignedOut>
