@@ -36,15 +36,18 @@ export const ApolloProviderWrapper: VFC<Props> = ({ children }) => {
     link: from([authMiddleware, httpLink]),
     cache: new InMemoryCache({
       typePolicies: {
-        Query: {
-          fields: {
-            project: {
-              merge: true,
-            },
-          },
+        query_root: {
+          queryType: true,
+        },
+        mutation_root: {
+          mutationType: true,
+        },
+        subscription_root: {
+          subscriptionType: true,
         },
       },
     }),
+    connectToDevTools: true,
   });
 
   return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>;
