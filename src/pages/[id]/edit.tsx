@@ -8,6 +8,7 @@ import type { GetMemoDetailQuery } from "type/_generated_/graphql";
 import { RichTextEditor } from "components/Edit/RichText";
 import { useMutationMemo } from "hooks/useMutationMemo";
 import { useEditMemo } from "hooks/useEditMemo";
+import { option } from "lib/richTextEditerOption";
 
 const EditPage: NextPage = () => {
   const router = useRouter();
@@ -15,10 +16,9 @@ const EditPage: NextPage = () => {
     variables: {
       id: router.query.id,
     },
-    fetchPolicy: "cache-and-network",
   });
 
-  const { update } = useMutationMemo();
+  const { update, deleteFunc } = useMutationMemo();
 
   const {
     title,
@@ -28,10 +28,22 @@ const EditPage: NextPage = () => {
     handleChangeTitle,
   } = useEditMemo(data);
 
+  const handleDelete = () => {
+    if (confirm("本当に削除しますか？")) {
+      deleteFunc({
+        variables: {
+          id: router.query.id,
+        },
+        onCompleted: () => router.push("/"),
+      });
+    }
+  };
   const handleReset = () => {
-    if (data?.memos_by_pk?.title && data.memos_by_pk.content) {
-      setTitle(data?.memos_by_pk?.title);
-      handleOnChangeContent(data?.memos_by_pk?.content);
+    if (confirm("リセットしますか？")) {
+      if (data?.memos_by_pk?.title && data.memos_by_pk.content) {
+        setTitle(data?.memos_by_pk?.title);
+        handleOnChangeContent(data?.memos_by_pk?.content);
+      }
     }
   };
 
@@ -67,18 +79,18 @@ const EditPage: NextPage = () => {
         <RichTextEditor
           value={content}
           onChange={handleOnChangeContent}
-          controls={[
-            ["bold", "strike", "italic", "underline", "clean"],
-            ["h1", "h2", "h3", "h4"],
-            ["unorderedList", "orderedList"],
-            ["blockquote", "code", "codeBlock"],
-            ["alignLeft", "alignCenter", "alignRight"],
-          ]}
+          controls={option}
         />
       </div>
       <div className="flex justify-end">
         <button
           className="py-3 px-4 mr-5 text-white bg-red-500 rounded-md"
+          onClick={handleDelete}
+        >
+          削除
+        </button>
+        <button
+          className="py-3 px-4 mr-5 text-white bg-orange-400 rounded-md"
           onClick={handleReset}
         >
           リセット
