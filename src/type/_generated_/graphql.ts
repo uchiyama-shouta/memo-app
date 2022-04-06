@@ -374,9 +374,30 @@ export type GetMemoQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetMemoQuery = { __typename?: 'query_root', memos: Array<{ __typename?: 'memos', id: string, title: string, updatedAt: string }> };
 
+export type UpdateMemoMutationVariables = Exact<{
+  id: Scalars['uuid'];
+  title?: InputMaybe<Scalars['String']>;
+  content?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type UpdateMemoMutation = { __typename?: 'mutation_root', update_memos_by_pk?: { __typename?: 'memos', title: string, content: string } | null };
+
+export type DeleteMemoMutationVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type DeleteMemoMutation = { __typename?: 'mutation_root', delete_memos_by_pk?: { __typename?: 'memos', id: string } | null };
+
 export type GetMemoDetailQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
 export type GetMemoDetailQuery = { __typename?: 'query_root', memos_by_pk?: { __typename?: 'memos', title: string, content: string, updatedAt: string } | null };
+
+export type InsertMemoMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type InsertMemoMutation = { __typename?: 'mutation_root', insert_memos_one?: { __typename?: 'memos', id: string } | null };

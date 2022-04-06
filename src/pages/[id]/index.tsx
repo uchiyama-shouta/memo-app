@@ -1,9 +1,11 @@
+import type { NextPage } from "next";
+
 import { gql, useQuery } from "@apollo/client";
-import { EditButton } from "components/Edit/EditButton";
+import { EditButton } from "components/Button/EditButton";
 import { useRouter } from "next/router";
 import { GetMemoDetailQuery } from "type/_generated_/graphql";
 
-const MemoPage = () => {
+const MemoPage: NextPage = () => {
   const router = useRouter();
   const { data } = useQuery<GetMemoDetailQuery>(getMemoDetail, {
     variables: {
