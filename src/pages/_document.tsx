@@ -32,19 +32,19 @@ class _Document extends Document {
           {/* safari */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
-          <meta name="apple-mobile-web-app-title" content="memo" />
+          <meta name="apple-mobile-web-app-title" content="janken" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/favicons/apple-touch-icon-180x180.png"
+            href="/apple-touch-icon-180x180.png"
           />
           {/* 一般 */}
-          <meta name="application-name" content="memo" />
+          <meta name="application-name" content="janken" />
           <meta name="theme-color" content="#000" />
-          <meta name="description" content="memo" />
-          <link rel="icon" sizes="192x192" href="/favicons/icon-192x192.png" />
-          <link rel="icon" href="/favicons/apple-touch-icon-180x180.png" />
-          <link rel="manifest" href="/favicons/manifest.json" />
+          <meta name="description" content="janken" />
+          <link rel="icon" sizes="192x192" href="/icon-192x192.png" />
+          <link rel="icon" href="/icon-144x144.png" />
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />
