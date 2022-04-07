@@ -11,11 +11,7 @@ type Props = {
   href?: string;
 };
 
-export const EditButton: VFC<Props> = ({
-  href,
-  tag = "a",
-  onClick: handleClick,
-}) => {
+const EditButton: VFC<Props> = ({ href, tag = "a", onClick: handleClick }) => {
   if (tag === "button") {
     return (
       <div className="inline-block p-3 bg-sky-500 rounded-full">
@@ -25,7 +21,7 @@ export const EditButton: VFC<Props> = ({
   }
   return (
     <div className="inline-block p-3 bg-sky-500 rounded-full">
-      <Link href={href ? href : ""}>
+      <Link href={href ? href : ""} prefetch={false}>
         <a>
           <MdModeEdit size={30} color="white" />
         </a>
@@ -33,3 +29,5 @@ export const EditButton: VFC<Props> = ({
     </div>
   );
 };
+
+export default EditButton;

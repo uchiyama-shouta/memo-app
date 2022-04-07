@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import type { NextPage } from "next";
 
 import { gql, useQuery } from "@apollo/client";
-import { EditButton } from "components/Button/EditButton";
 import { useRouter } from "next/router";
 import { GetMemoDetailQuery } from "type/_generated_/graphql";
+
+const EditButton = lazy(() => import("components/Button/EditButton"));
 
 const MemoPage: NextPage = () => {
   const router = useRouter();
@@ -27,7 +29,9 @@ const MemoPage: NextPage = () => {
         }}
       />
       <div className="fixed right-10 bottom-3">
-        <EditButton href={`/${router.query.id}/edit`} />
+        <Suspense fallback={null}>
+          <EditButton href={`/${router.query.id}/edit`} />
+        </Suspense>
       </div>
     </div>
   );

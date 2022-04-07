@@ -20,7 +20,7 @@ export const MemoList: VFC = () => {
         </>
       ) : (
         data?.memos.map(({ id, title, updatedAt }) => (
-          <Link href={`/${id}`} key={id}>
+          <Link href={`/${id}`} key={id} prefetch={false}>
             <a className="flex flex-col items-center w-full">
               <MemoItem
                 title={title}
