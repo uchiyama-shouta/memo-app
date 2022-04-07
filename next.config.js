@@ -1,3 +1,6 @@
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
+
 /** @type {import('next').NextConfig} */
 const config = {
   swcMinify: true,
@@ -8,8 +11,12 @@ const config = {
     formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    runtime: "nodejs"
-  }
+    runtime: "nodejs",
+  },
 };
 
-export default config;
+module.exports = withPWA({
+  pwa: {dest: "public", runtimeCaching},
+  ...config,
+});
+
