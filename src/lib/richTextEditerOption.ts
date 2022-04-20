@@ -4,6 +4,6 @@ export const option: ToolbarControl[][] = [
   ["bold", "strike", "italic", "underline", "clean"],
   ["h1", "h2", "h3", "h4"],
   ["unorderedList", "orderedList"],
-  ["blockquote", "code", "codeBlock", "link"],
+  ["blockquote", "code", "link"],
   ["alignLeft", "alignCenter", "alignRight"],
 ];
