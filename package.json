@@ -11,7 +11,7 @@
     "lint": "run-p -l -c --aggregate-output lint:*",
     "fix": "run-p -l -c --aggregate-output fix:*",
     "lint:eslint": "eslint --cache .",
-    "lint:prettier": "prettier --check .",
+    "format": "prettier --check .",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "yarn lint:prettier --write",
     "hasura-console": "open https://cloud.hasura.io/project/b73833b6-7fc6-40a3-8813-52f7a884378e/console",

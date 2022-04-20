@@ -18,7 +18,7 @@ const MemoPage: NextPage = () => {
   const content = data?.memos_by_pk?.content || "";
 
   return (
-    <div className="py-5 px-3 mx-auto mb-10 w-11/12 rounded-md border border-gray-300">
+    <div className="py-5 px-3 mx-auto xl:mx-auto mb-10 w-11/12 xl:w-3/5 rounded-md border border-gray-300">
       <h2 className="mb-7 font-sans text-4xl font-bold">
         {data?.memos_by_pk?.title}
       </h2>
@@ -28,7 +28,7 @@ const MemoPage: NextPage = () => {
           __html: content,
         }}
       />
-      <div className="fixed right-10 bottom-3">
+      <div className="fixed right-10 xl:right-40 bottom-3 ">
         <Suspense fallback={null}>
           <EditButton href={`/${router.query.id}/edit`} />
         </Suspense>

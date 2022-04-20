@@ -68,18 +68,21 @@ const EditPage: NextPage = () => {
   };
 
   return (
-    <div className="py-5 px-3 mx-auto w-11/12 rounded-md border border-gray-300">
+    <div className="py-5 px-3 mx-auto xl:mx-auto w-11/12 xl:w-3/5 rounded-md border border-gray-300">
       <input
         type="text"
         value={title}
         onChange={handleChangeTitle}
         className="py-3 px-4 mb-8 w-full text-4xl leading-5 rounded-md border border-gray-300"
       />
-      <div className="mb-6 prose lg:prose-xl">
+      <div className="xl:mx-auto mb-6 w-full prose lg:prose-xl">
         <RichTextEditor
           value={content}
           onChange={handleOnChangeContent}
           controls={option}
+          classNames={{
+            root: "w-full m-0",
+          }}
         />
       </div>
       <div className="flex justify-end">

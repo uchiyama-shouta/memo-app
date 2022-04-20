@@ -11,7 +11,7 @@ export const MemoList: FC = () => {
   const { data, loading } = useQuery<GetMemoQuery>(getMemo);
 
   return (
-    <ul className="flex flex-col items-center w-full">
+    <ul className="flex flex-col items-center xl:mx-auto w-full xl:w-3/5">
       {loading ? (
         <>
           <MemoSkelton />
@@ -21,7 +21,7 @@ export const MemoList: FC = () => {
       ) : (
         data?.memos.map(({ id, title, updatedAt }) => (
           <Link href={`/${id}`} key={id} prefetch={false}>
-            <a className="flex flex-col items-center w-full">
+            <a className="flex flex-col items-center mb-3 w-full ">
               <MemoItem
                 title={title}
                 updatedAt={dayjs(updatedAt).format("YYYY/MM/DD")}

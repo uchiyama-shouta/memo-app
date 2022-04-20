@@ -25,7 +25,7 @@ const Home: NextPage = () => {
   return (
     <div className="pt-3">
       <MemoList />
-      <div className="fixed right-10 bottom-3">
+      <div className="fixed right-10 xl:right-40 bottom-3">
         <Suspense fallback={null}>
           <EditButton tag="button" onClick={handleClick} />
         </Suspense>
