@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from "react";
+import type { ReactNode, FC } from "react";
 import {
   ApolloClient,
   ApolloProvider,
@@ -15,7 +15,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const ApolloProviderWrapper: VFC<Props> = ({ children }) => {
+export const ApolloProviderWrapper: FC<Props> = ({ children }) => {
   const { getToken } = useAuth();
   const authMiddleware = setContext(async (req, { headers }) => {
     const token = await getToken({ template: "hasura" });

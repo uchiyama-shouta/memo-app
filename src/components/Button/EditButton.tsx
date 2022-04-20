@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import type { FC } from "react";
 import Link from "next/link";
 import { MdModeEdit } from "react-icons/md";
 
@@ -11,7 +11,7 @@ type Props = {
   href?: string;
 };
 
-const EditButton: VFC<Props> = ({ href, tag = "a", onClick: handleClick }) => {
+const EditButton: FC<Props> = ({ href, tag = "a", onClick: handleClick }) => {
   if (tag === "button") {
     return (
       <div className="inline-block p-3 bg-sky-500 rounded-full">

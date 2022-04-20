@@ -1,9 +1,9 @@
-import { VFC } from "react";
+import { FC } from "react";
 
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
-export const Header: VFC = () => {
+export const Header: FC = () => {
   return (
     <header className="flex justify-between items-center py-2 px-10 mb-3 h-12 border-b border-gray-300">
       <Link href="/" prefetch={false}>

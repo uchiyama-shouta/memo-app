@@ -1,11 +1,11 @@
-import type { VFC } from "react";
+import type { FC } from "react";
 
 type Props = {
   title: string;
   updatedAt: string;
 };
 
-export const MemoItem: VFC<Props> = ({ title, updatedAt }) => {
+export const MemoItem: FC<Props> = ({ title, updatedAt }) => {
   return (
     <li className="py-3 px-8 mb-3 w-11/12 text-left rounded-md border border-gray-300">
       <p className="text-2xl">{title}</p>
@@ -13,4 +13,3 @@ export const MemoItem: VFC<Props> = ({ title, updatedAt }) => {
     </li>
   );
 };
-

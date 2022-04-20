@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import type { FC } from "react";
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
 import dayjs from "dayjs";
@@ -7,7 +7,7 @@ import type { GetMemoQuery } from "type/_generated_/graphql";
 import { MemoItem } from "components/memo/MemoItem";
 import { MemoSkelton } from "components/memo/MemoSkelton";
 
-export const MemoList: VFC = () => {
+export const MemoList: FC = () => {
   const { data, loading } = useQuery<GetMemoQuery>(getMemo);
 
   return (

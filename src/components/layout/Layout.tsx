@@ -1,11 +1,11 @@
-import type { ReactNode, VFC } from "react";
+import type { ReactNode, FC } from "react";
 import { Header } from "components/Header";
 
 type Props = {
   children: ReactNode;
 };
 
-export const Layout: VFC<Props> = ({ children }) => {
+export const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
