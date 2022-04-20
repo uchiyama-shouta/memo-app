@@ -12,9 +12,12 @@ export const useEditMemo = (data: GetMemoDetailQuery | undefined) => {
     }
   }, [data]);
 
-  const handleChangeTitle: ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
-    setTitle(e.target.value);
-  }, [setTitle]);
+  const handleChangeTitle: ChangeEventHandler<HTMLInputElement> = useCallback(
+    (e) => {
+      setTitle(e.target.value);
+    },
+    [setTitle],
+  );
 
   return {
     title,
