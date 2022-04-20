@@ -23,7 +23,7 @@ const MemoPage: NextPage = () => {
         {data?.memos_by_pk?.title}
       </h2>
       <div
-        className="prose lg:prose-xl"
+        className="prose lg:prose-lg"
         dangerouslySetInnerHTML={{
           __html: content,
         }}
