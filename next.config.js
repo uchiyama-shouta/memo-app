@@ -1,5 +1,5 @@
-// const withPWA = require("next-pwa");
-// const runtimeCaching = require("next-pwa/cache");
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -10,14 +10,9 @@ const config = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  experimental: {
-    runtime: "nodejs",
-  },
 };
 
-// module.exports = withPWA({
-//   pwa: { dest: "public", runtimeCaching },
-//   ...config,
-// });
-
-module.exports = config
+module.exports = withPWA({
+  pwa: { dest: "public", runtimeCaching },
+  ...config,
+});
