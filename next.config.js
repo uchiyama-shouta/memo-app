@@ -16,7 +16,6 @@ const config = {
 };
 
 module.exports = withPWA({
-  pwa: {dest: "public", runtimeCaching},
+  pwa: { dest: "public", runtimeCaching },
   ...config,
 });
-
