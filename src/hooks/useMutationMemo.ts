@@ -5,13 +5,15 @@ import type {
 } from "type/_generated_/graphql";
 
 export const useMutationMemo = () => {
-  const [update] =
+  const [update, { loading: updateIsLoading }] =
     useMutation<Mutation_RootUpdate_Memos_By_PkArgs["_set"]>(updateMemo);
-  const [deleteFunc] =
+  const [deleteFunc, { loading: deleteIsLoading }] =
     useMutation<Mutation_RootDelete_Memos_By_PkArgs>(deleteMemo);
   return {
     deleteFunc,
     update,
+    updateIsLoading,
+    deleteIsLoading,
   };
 };
 

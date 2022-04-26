@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { GetMemoDetailQuery } from "type/_generated_/graphql";
+import type { GetMemoDetailQuery } from "type/_generated_/graphql";
 
 const EditButton = lazy(() => import("components/Button/EditButton"));
 

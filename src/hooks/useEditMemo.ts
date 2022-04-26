@@ -1,5 +1,6 @@
-import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
-import { GetMemoDetailQuery } from "type/_generated_/graphql";
+import type { ChangeEventHandler } from "react";
+import { useCallback, useEffect, useState } from "react";
+import type { GetMemoDetailQuery } from "type/_generated_/graphql";
 
 export const useEditMemo = (data: GetMemoDetailQuery | undefined) => {
   const [title, setTitle] = useState("");

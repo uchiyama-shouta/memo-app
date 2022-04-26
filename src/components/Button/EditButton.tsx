@@ -14,13 +14,13 @@ type Props = {
 const EditButton: FC<Props> = ({ href, tag = "a", onClick: handleClick }) => {
   if (tag === "button") {
     return (
-      <div className="inline-block p-3 bg-sky-500 rounded-full">
+      <div className="inline-block p-3 bg-sky-500 rounded-full hover:cursor-pointer">
         <MdModeEdit size={30} color="white" onClick={handleClick} />
       </div>
     );
   }
   return (
-    <div className="inline-block p-3 bg-sky-500 rounded-full">
+    <div className="inline-block p-3 bg-sky-500 rounded-full hover:cursor-pointer">
       <Link href={href ? href : ""} prefetch={false}>
         <a>
           <MdModeEdit size={30} color="white" />

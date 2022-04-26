@@ -36,3 +36,9 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
+
+# next-pwa
+public/sw.js
+public/sw.js.map
+public/workbox-74d02f44.js
+public/workbox-74d02f44.js.map

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, NetworkStatus } from "@apollo/client";
 
 import type { NextPage } from "next";
 import type { GetMemoDetailQuery } from "type/_generated_/graphql";
@@ -9,14 +9,19 @@ import { RichTextEditor } from "components/Edit/RichText";
 import { useMutationMemo } from "hooks/useMutationMemo";
 import { useEditMemo } from "hooks/useEditMemo";
 import { option } from "lib/richTextEditerOption";
+import { Loader } from "@mantine/core";
 
 const EditPage: NextPage = () => {
   const router = useRouter();
-  const { data, refetch } = useQuery<GetMemoDetailQuery>(getMemoDetail, {
-    variables: {
-      id: router.query.id,
+  const { data, refetch, networkStatus } = useQuery<GetMemoDetailQuery>(
+    getMemoDetail,
+    {
+      variables: {
+        id: router.query.id,
+      },
+      notifyOnNetworkStatusChange: true,
     },
-  });
+  );
 
   const { update, deleteFunc } = useMutationMemo();
 
@@ -90,7 +95,11 @@ const EditPage: NextPage = () => {
           className="py-3 px-4 mr-5 text-white bg-red-500 rounded-md"
           onClick={handleDelete}
         >
-          削除
+          {networkStatus === NetworkStatus.refetch ? (
+            <Loader className="h-5" />
+          ) : (
+            "削除"
+          )}
         </button>
         <button
           className="py-3 px-4 mr-5 text-white bg-orange-400 rounded-md"
@@ -102,7 +111,11 @@ const EditPage: NextPage = () => {
           className="py-3 px-4 text-white bg-sky-500 rounded-md"
           onClick={handleUpdate}
         >
-          更新
+          {networkStatus === NetworkStatus.refetch ? (
+            <Loader className="h-5" />
+          ) : (
+            "更新"
+          )}
         </button>
       </div>
     </div>

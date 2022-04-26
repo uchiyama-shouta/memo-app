@@ -1,4 +1,4 @@
-import { ToolbarControl } from "@mantine/rte/lib/components/Toolbar/controls";
+import type { ToolbarControl } from "@mantine/rte/lib/components/Toolbar/controls";
 
 export const option: ToolbarControl[][] = [
   ["bold", "strike", "italic", "underline", "clean"],

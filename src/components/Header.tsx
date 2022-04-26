@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
